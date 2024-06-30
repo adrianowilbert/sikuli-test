@@ -55,7 +55,7 @@ public class MySikuliTest {
         System.out.println(">>> Validate result (18)");
 
         // Fecha a calculadora
-        calculator.close();
+        screen.type(Key.F4, KeyModifier.ALT);
         System.out.println(">>> Close calculator");
 
     }
