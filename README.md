@@ -122,4 +122,4 @@ maven
 `mvn clean verify`
 
 ## Contato
-Para dúvidas ou feedback, entre em contato pelo e-mail: [adrianowilbert@gmail.com](mailto:adrianowilbert@gmail.com) 
+Para dúvidas ou feedback, entre em contato com Adriano Wilbert pelo e-mail: [adrianowilbert@gmail.com](mailto:adrianowilbert@gmail.com) 
