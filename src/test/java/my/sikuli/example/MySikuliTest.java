@@ -1,59 +1,63 @@
 package my.sikuli.example;
 
-import org.junit.Ignore;
 import org.junit.Test;
-import org.sikuli.script.App;
-import org.sikuli.script.FindFailed;
-import org.sikuli.script.Key;
-import org.sikuli.script.KeyModifier;
-import org.sikuli.script.Match;
-import org.sikuli.script.Pattern;
-import org.sikuli.script.Screen;
+import org.sikuli.script.*;
 
-import static junit.framework.Assert.assertNotNull;
+public class MySikuliTest {
 
-public class MySikuliTest extends Utilities {
+    @Test
+    public void calc() throws FindFailed {
+        ImagePath.add(System.getProperty("user.dir"));
 
-    @Test @Ignore
-    public void testSomething() throws FindFailed {
-        App.focus("firefox");
-        Screen screen = new Screen();
-        goToURL(screen, "http://currentlabel.co.uk/flexuscalculus/");
-        screen.wait("src/images/pompei.png", 20);
-        Match pompei = screen.find("src/images/pompei.png");
-        pompei.setTargetOffset(70, 0);
-        pompei.click();
-        clearField(screen);
-        screen.type("0");
-        pompei.setTargetOffset(170, 0);
-        pompei.click();
-        clearField(screen);
-        screen.type("0");
-        pompei.setTargetOffset(270, 0);
-        pompei.click();
-        clearField(screen);
-        screen.type("0");
-        pompei.setTargetOffset(370, 0);
-        pompei.click();
-        clearField(screen);
-        screen.type("0");
-        pompei.setTargetOffset(470, 0);
-        pompei.click();
-        clearField(screen);
-        screen.type("0");
-        pompei.setTargetOffset(470, -70);
-        pompei.click(); // deselect last cell of popei row.
+        String pathYourSystem = System.getProperty("user.dir");
+        System.out.println(pathYourSystem);
 
-        assertNotNull("Pompei row should be zeroed out",
-                screen.wait("src/images/pompeiRowOfZeros.png", 5));
+        final Screen screen = new Screen();
+        screen.initScreen(screen);
 
-    }
+        Pattern btn9Img = new Pattern("src\\images\\num09.png");
+        Pattern calcImg = new Pattern("src\\images\\calc.png");
+        Pattern igualImg = new Pattern("src\\images\\equal.png");
+        Pattern resultImg = new Pattern("src\\images\\result.png");
+        Pattern somaImg = new Pattern("src\\images\\sum.png");
 
+        // Abre a calculadora
+        App calculator = new App("C:\\Windows\\System32\\calc.exe");
+        calculator.open();
+        System.out.println(">>> Open calculator");
 
+        // Clica no botão "9"
+        screen.wait(btn9Img, 1000);
+        screen.click();
+        System.out.println(">>> Click in button (9)");
 
-    private void clearField(Screen screen) {
-        screen.type("a", KeyModifier.CMD);
-        screen.type(Key.BACKSPACE);
+        // Clica no botão "+"
+        screen.wait(somaImg, 1000);
+        screen.click();
+        System.out.println(">>> Click in button (+)");
+
+        // Clica no botão "9"
+        screen.wait(btn9Img, 1000);
+        screen.click();
+        System.out.println(">>> Click in button (9) again");
+
+        // Clica no botão "="
+        screen.wait(igualImg, 1000);
+        screen.click();
+        System.out.println(">>> Click in button (=)");
+
+        // Valida a expressão do cálculo
+        screen.wait(calcImg, 1000);
+        System.out.println(">>> Validate expression (9+9=)");
+
+        // Valida o resultado
+        screen.find(resultImg);
+        System.out.println(">>> Validate result (18)");
+
+        // Fecha a calculadora
+        calculator.close();
+        System.out.println(">>> Close calculator");
+
     }
 
 }
