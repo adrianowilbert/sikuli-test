@@ -6,7 +6,7 @@ import org.sikuli.script.*;
 public class MySikuliTest {
 
     @Test
-    public void calc() throws FindFailed {
+    public void calc9Plus9() throws FindFailed {
         ImagePath.add(System.getProperty("user.dir"));
 
         String pathYourSystem = System.getProperty("user.dir");
@@ -15,11 +15,11 @@ public class MySikuliTest {
         final Screen screen = new Screen();
         screen.initScreen(screen);
 
-        Pattern btn9Img = new Pattern("src\\images\\num09.png");
-        Pattern calcImg = new Pattern("src\\images\\calc.png");
-        Pattern igualImg = new Pattern("src\\images\\equal.png");
-        Pattern resultImg = new Pattern("src\\images\\result.png");
-        Pattern somaImg = new Pattern("src\\images\\sum.png");
+        Pattern btn9Img = new Pattern("src\\images\\numbers\\num09.png");
+        Pattern calcImg = new Pattern("src\\images\\calculations\\calc9+9.png");
+        Pattern igualImg = new Pattern("src\\images\\expressions\\equal.png");
+        Pattern resultImg = new Pattern("src\\images\\results\\result18.png");
+        Pattern somaImg = new Pattern("src\\images\\expressions\\sum.png");
 
         // Abre a calculadora
         App calculator = new App("C:\\Windows\\System32\\calc.exe");
