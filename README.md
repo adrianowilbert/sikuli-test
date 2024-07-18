@@ -116,10 +116,10 @@ screen.type("a", KeyModifier.CTRL);
 ```
 
 
-## Executando Testes
+## Executando Testes através das Suites
 
 maven
-`mvn clean verify`
+`mvn clean verify -Dgroups=my.sikuli.example.suites.AllSuites`
 
 ## Contato
 Para dúvidas ou feedback, entre em contato com Adriano Wilbert pelo e-mail: [adrianowilbert@gmail.com](mailto:adrianowilbert@gmail.com) 

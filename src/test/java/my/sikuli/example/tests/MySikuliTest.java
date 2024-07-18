@@ -1,11 +1,18 @@
-package my.sikuli.example;
+package my.sikuli.example.tests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
+import my.sikuli.example.suites.AllSuites;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.sikuli.script.*;
 
 public class MySikuliTest {
 
     @Test
+    @Category(AllSuites.class)
+    @DisplayName("Teste 9 + 9")
+    @Description("Deve retornar valor 18 Quando somado 9 + 9")
     public void calc9Plus9() throws FindFailed {
         ImagePath.add(System.getProperty("user.dir"));
 
