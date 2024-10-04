@@ -122,4 +122,4 @@ maven
 `mvn clean verify -Dgroups=my.sikuli.example.suites.AllSuites`
 
 ## Contato
-Para dúvidas ou feedback, entre em contato com Adriano Wilbert pelo e-mail: [adrianowilbert@gmail.com](mailto:adrianowilbert@gmail.com) 
+Dúvidas ou feedback, entre em contato com Adriano Wilbert pelo e-mail: [adrianowilbert@gmail.com](mailto:adrianowilbert@gmail.com) 
